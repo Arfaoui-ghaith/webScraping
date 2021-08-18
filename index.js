@@ -21,7 +21,7 @@ const register = fs.readFileSync('register.txt')
 ( async () =>  {
    
     await Promise.all(
-    data.slice(2500,3000).map((row,i) => {
+    data.slice(3000,4000).map((row,i) => {
     if(register.every(el => el !== row[0])){
         return request({ method: 'GET'
         , uri: `https://www.imdb.com/title/${row[0]}`
