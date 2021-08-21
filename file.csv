@@ -1,3 +1,4 @@
-ID,director,actors,language,country,numero
-tt0000574,Charles Tait,"Elizabeth Tait,John Tait,Norman Campbell,Bella Cola,Will Coyne,Sam Crewes,Jack Ennis,John Forde,Vera Linden,Mr. Marshall,Mr. McKenzie,Frank Mills,Ollie Wilson,E.J. Tait,Frank Tait",None,Australia,0
-tt0000591,Michel Carré,"Georges Wague,Henri Gouget,Christiane Mandelys,Gilberte Sergy","None,French",France,1
+ID,director,actors,language,country
+tt0000502,Ricardo de Baños,"Antonio del Pozo, El Mochuelo",None,Spain
+tt0000574,Charles Tait,"Elizabeth Tait, John Tait, Norman Campbell",None,Australia
+tt0000591,Michel Carré,"Georges Wague, Henri Gouget, Christiane Mandelys","None, French",France
