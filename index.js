@@ -25,9 +25,9 @@ const keys = ['ae471440','8ecea15d','b9bd48a6','e54431d3','47203f8b','193ef3a','
 
 ( async () =>  {
    
-    var s = 236484;
+    var s = 297478;
 
-    while(s < 300000 )
+    while(s < 340000 ){
     await Promise.all(
     data.slice(s,s+=200).map((row,i) => {
     if(register.every(el => el !== row[0])){
@@ -101,5 +101,6 @@ const keys = ['ae471440','8ecea15d','b9bd48a6','e54431d3','47203f8b','193ef3a','
     })).then( values => {
         console.log(values.length,'...Done');
     }).catch(err => console.log(err.message));
+    }
 
 } )()
