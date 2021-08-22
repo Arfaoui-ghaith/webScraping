@@ -17,10 +17,19 @@ const register = fs.readFileSync('register2.txt')
     .map(e => e.trim()); // split each line to array
 
 
+const keys = ['ae471440','8ecea15d','b9bd48a6','e54431d3','47203f8b','193ef3a','9c7e8dca','a0bcf344',
+'da2a56d7', '7410c07d', 'd73910fd', '96792a97', 'e0b7bf94', '2709942b', '6d2e3336', '837a1b8b', 'ff6766e3', 
+'3fb5f5bd', '87c1b8b2', 'ea376380', '2dd0dbee', '4d1be897', '2599746f', '92087764', 'd4a899e2', '97cd5b44', 
+'4eb286e7', 'd3422035'];
+
+
 ( async () =>  {
    
+    var s = 197890;
+
+    while(s < 300000 )
     await Promise.all(
-    data.slice(0,50000).map((row,i) => {
+    data.slice(s,s+=200).map((row,i) => {
     if(register.every(el => el !== row[0])){
         return request({ method: 'GET'
         //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=ae471440`
@@ -41,7 +50,18 @@ const register = fs.readFileSync('register2.txt')
         //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=6d2e3336`
         //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=837a1b8b`
         //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=ff6766e3`
-        , uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=3e5351f0`
+        //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=3fb5f5bd`
+        //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=87c1b8b2`
+        //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=ea376380`
+        //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=2dd0dbee`
+        //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=4d1be897`
+        //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=2599746f`
+        //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=92087764`
+        //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=d4a899e2`
+        //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=97cd5b44`
+        , uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=4eb286e7`
+        //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=d3422035`
+        //, uri: `http://www.omdbapi.com/?i=${row[0]}&plot=full&apikey=3e5351f0`
         , gzip: true
         ,  headers: {
             'X-Requested-With': 'XMLHttpRequest' ,
@@ -74,7 +94,7 @@ const register = fs.readFileSync('register2.txt')
                 //return {numero: i, id: row[0], director, actors: actors.toString(), language: languages.toString(), country: countrys.toString()};
             }
 
-        }).catch(err => console.log(err.message));
+        }).catch(err => { console.log(err.message);});
     } else {
         return console.log(`${row[0]} is already scraped !`);
     }
